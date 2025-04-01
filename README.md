@@ -7,7 +7,7 @@ PAGE DESCRIPTION- A responsive multi-page website for a tech(EricSolutionZ) serv
  HTML/CSS Features used;
 - Flexbox Layout: Used for navigation and homepage sections
 - CSS Grid: Implemented for services display
-- Responsive Images: All images scale properly with `max-width: 100%`
+- Responsive Images
 - Form Validation: HTML5 validation attributes on contact form
 - Animations: 
   - Fade-in animation for hero section
