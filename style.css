@@ -253,7 +253,7 @@ footer {
 }
 
 .service-card {
-    animation: fadeIn 0.0s ease forwards;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .service-card:nth-child(1) { animation-delay: 0.1s; }
