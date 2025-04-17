@@ -413,6 +413,7 @@ footer {
     .contact-form {
         padding: 1rem;
     }
+<<<<<<< HEAD
     
     #themeToggle {
         top: 0.5rem;
@@ -421,3 +422,12 @@ footer {
         font-size: 0.8rem;
     }
 }
+=======
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+>>>>>>> 7910090eab23f2438c1ff1e9c51485de43605c5e
