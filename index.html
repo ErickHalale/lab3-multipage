@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="themeToggle">Switch Theme</button>
+    <h2>Team Members</h2>
+<ul id="userList"></ul>
+<button id="loadUsersBtn">Load Users</button>
+    
     <header>
         <nav class="navbar">
             <div class="logo">EricSolutionZ</div>
@@ -42,14 +47,40 @@
                 </ul>
             </aside>
         </div>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="question">What services do you offer?</h3>
+                <p class="answer">We provide comprehensive tech solutions including laptop repairs, phone repairs, and network configurations for both individuals and businesses.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">How long do repairs usually take?</h3>
+                <p class="answer">Most repairs are completed within 24-48 hours, depending on the complexity of the issue and parts availability.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="question">Do you offer on-site services?</h3>
+                <p class="answer">Yes, we provide on-site services for network configurations and business solutions. Device repairs are typically done in our workshop.</p>
+            </div>
+        </section>
+
+        <!-- Team Members Section -->
+        <section class="team">
+            <h2>Our Team Members</h2>
+            <ul id="userList"></ul>
+            <button id="loadUsersBtn" class="btn">Load Team Members</button>
+        </section>
     </main>
 
     <footer>
         <div class="social-links">
-            <a href="https://facebook.com" target="_https://web.facebook.com/">Facebook</a>
+            <a href="https://web.facebook.com/" target="_blank">Facebook</a>
             <a href="https://instagram.com" target="_blank">Instagram</a>
         </div>
         <p>&copy; 2025 EricSolutionZ. All rights reserved.</p>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

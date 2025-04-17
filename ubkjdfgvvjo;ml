@@ -1,0 +1,87 @@
+// Theme Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        // Check for saved theme preference
+        if (localStorage.getItem('darkTheme') === 'true') {
+            document.body.classList.add('dark-theme');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            // Save preference to localStorage
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('darkTheme', isDark);
+        });
+    }
+
+    // Contact Form Validation
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill out all fields.');
+            } else {
+                // Remove any existing response message
+                const existingResponse = document.getElementById('response');
+                if (existingResponse) {
+                    existingResponse.remove();
+                }
+
+                const responseDiv = document.createElement('div');
+                responseDiv.id = 'response';
+                responseDiv.textContent = `Thanks, ${name}. We'll get back to you soon!`;
+                responseDiv.style.marginTop = '1rem';
+                responseDiv.style.padding = '1rem';
+                responseDiv.style.backgroundColor = '#e8f5e9';
+                responseDiv.style.borderRadius = '5px';
+                responseDiv.style.color = '#2e7d32';
+                contactForm.parentNode.insertBefore(responseDiv, contactForm.nextSibling);
+                
+                // Reset form
+                contactForm.reset();
+            }
+        });
+    }
+
+    // Fetch API Integration
+    const loadUsersBtn = document.getElementById('loadUsersBtn');
+    if (loadUsersBtn) {
+        loadUsersBtn.addEventListener('click', async () => {
+            try {
+                loadUsersBtn.disabled = true;
+                loadUsersBtn.textContent = 'waiting...';
+                
+                const res = await fetch('https://jsonplaceholder.typicode.com/users');
+                const users = await res.json();
+                const userList = document.getElementById('userList');
+                userList.innerHTML = '';
+                
+                users.forEach(user => {
+                    const li = document.createElement('li');
+                    li.textContent = user.name;
+                    userList.appendChild(li);
+                });
+            } catch (err) {
+                console.error('Failed to load users:', err);
+                alert('Failed to load users. Please try again later.');
+            } finally {
+                loadUsersBtn.disabled = false;
+                loadUsersBtn.textContent = 'Load Team Members';
+            }
+        });
+    }
+
+    // FAQ Toggle Functionality
+    document.querySelectorAll('.question').forEach((q) => {
+        q.addEventListener('click', () => {
+            q.classList.toggle('active');
+            q.nextElementSibling.classList.toggle('visible');
+        });
+    });
+});
